@@ -6,7 +6,7 @@ import pdp from "../assets/pdp.jpg";
 export function Navbar() {
   return (
     <div className="grid grid-cols-12 mx-5">
-      <div className=" col-span-2 col-start-6 my-5 flex justify-center flex-col px-7 h-14 rounded-3xl bg-white">
+      <div className="col-span-2 col-start-6 my-5 flex justify-center flex-col px-7 h-14 rounded-3xl bg-white">
         <div className="flex justify-between gap-7">
           <div className="flex justify-center flex-col">
             <AiFillHome size={28} className="text-slate-600 cursor-pointer" />
