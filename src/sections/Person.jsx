@@ -22,10 +22,10 @@ function Left() {
     <div className="col-span-5">
       <Link
         to="/"
-        className="flex border rounded-3xl px-4 py-1 align-middle gap-3 w-36 border-[#5E5B70] cursor-pointer hover:bg-[#5E5B70] hover:text-white"
+        className="flex justify-center pr-2 border rounded-3xl py-2 align-middle gap-3 w-36 border-[#5E5B70] cursor-pointer hover:bg-[#5E5B70] hover:text-white"
       >
-        <TbArrowBackUp size={30} />
-        <h1 className="text-lg">Retour</h1>
+        <TbArrowBackUp size={25} />
+        <h1 className="">Retour</h1>
       </Link>
       <div className="flex flex-col mt-[50px]">
         <div className="flex justify-between items-center mb-[40px]">
