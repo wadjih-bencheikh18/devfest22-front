@@ -1,9 +1,16 @@
-import { Navbar } from "./sections";
+import { Profile, Home } from "./pages";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "profile",
+    element: <Profile />,
+  },
+]);
 function App() {
-  return (
-    <div className="w-screen h-screen bg-slate-400">
-      <Navbar />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

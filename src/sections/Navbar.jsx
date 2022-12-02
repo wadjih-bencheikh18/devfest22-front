@@ -9,13 +9,19 @@ export function Navbar() {
       <div className=" col-span-2 col-start-6 my-5 flex justify-center flex-col px-7 h-14 rounded-3xl bg-white">
         <div className="flex justify-between gap-7">
           <div className="flex justify-center flex-col">
-            <AiFillHome size={28} className="text-slate-600" />
+            <AiFillHome size={28} className="text-slate-600 cursor-pointer" />
           </div>
           <div className="flex justify-center flex-col">
-            <IoMdNotifications size={30} className="text-slate-600" />
+            <IoMdNotifications
+              size={30}
+              className="text-slate-600 cursor-pointer"
+            />
           </div>
           <div className="flex justify-center flex-col">
-            <IoSettingsSharp size={28} className="text-slate-600" />
+            <IoSettingsSharp
+              size={28}
+              className="text-slate-600 cursor-pointer"
+            />
           </div>
         </div>
       </div>
