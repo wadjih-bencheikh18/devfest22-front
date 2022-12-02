@@ -46,9 +46,7 @@ function Left() {
           <table>
             <tr>
               <td>
-                <h1 className="font-bold text-lg">
-                  Date de la dernière visite :
-                </h1>
+                <h1 className="font-bold text-lg">Dernière visite :</h1>
               </td>
               <td>
                 <p className="ml-3"> 12/12/2020</p>
@@ -67,7 +65,7 @@ function Left() {
                 <h1 className="font-bold text-lg">Allergies :</h1>
               </td>
               <td>
-                <p className="ml-3"> Champignon, Pollen</p>
+                <p className="ml-3"> Champignons, Pollen</p>
               </td>
             </tr>
           </table>
@@ -98,7 +96,7 @@ function Right() {
         </div>
       </div>
       <div className="inline-block mt-5 rounded-3xl w-64 pl-5  py-1 gap-3 bg-[#FEFEFE]">
-        <h1 className="text-lg">Filters</h1>
+        <h1 className="text-lg">Filtrer</h1>
       </div>
       <Swiper
         modules={[Pagination]}
@@ -117,7 +115,7 @@ function Right() {
                 <img src={pdp} alt="pdp" className="rounded-3xl" />
               </div>
               <div className="flex justify-center flex-col">
-                <h1 className="text-sm">Wadjih bencheikh</h1>
+                <h1 className="text-sm">Wadjih Bencheikh</h1>
                 <p className="text-slate-600 text-xs ">Radiologue</p>
               </div>
             </div>
@@ -133,7 +131,7 @@ function Right() {
                 <img src={pdp} alt="pdp" className="rounded-3xl" />
               </div>
               <div className="flex justify-center flex-col">
-                <h1 className="text-sm">Wadjih bencheikh</h1>
+                <h1 className="text-sm">Wadjih Bencheikh</h1>
                 <p className="text-slate-600 text-xs ">Radiologue</p>
               </div>
             </div>
@@ -149,7 +147,7 @@ function Right() {
                 <img src={pdp} alt="pdp" className="rounded-3xl" />
               </div>
               <div className="flex justify-center flex-col">
-                <h1 className="text-sm">Wadjih bencheikh</h1>
+                <h1 className="text-sm">Wadjih Bencheikh</h1>
                 <p className="text-slate-600 text-xs ">Radiologue</p>
               </div>
             </div>
@@ -165,7 +163,7 @@ function Right() {
                 <img src={pdp} alt="pdp" className="rounded-3xl" />
               </div>
               <div className="flex justify-center flex-col">
-                <h1 className="text-sm">Wadjih bencheikh</h1>
+                <h1 className="text-sm">Wadjih Bencheikh</h1>
                 <p className="text-slate-600 text-xs ">Radiologue</p>
               </div>
             </div>
@@ -176,12 +174,12 @@ function Right() {
         onClick={() => {
           setVisible((v) => !v);
         }}
-        className="mt-10  relative z-10 cursor-pointer py-2 px-2 bg-[#5E5B70] rounded-full flex justify-center text-white"
+        className="mt-10 relative z-10 cursor-pointer py-2 px-2 bg-[#5E5B70] rounded-full flex justify-center text-white"
       >
         <HiPlus size={20} />
       </div>
       <div
-        className={`grid grid-cols-2 gap-2 transition-all duration-500 ease-in-out  text-center ${
+        className={`grid grid-cols-2 gap-2 transition-all duration-500 ease-in-out text-center ${
           visible ? "mt-3" : "-mt-9 "
         }  `}
       >

@@ -32,8 +32,8 @@ export function Navbar() {
               <img src={pdp} alt="pdp" className="rounded-3xl" />
             </div>
             <div className="flex justify-center flex-col">
-              <h1>Wadjih bencheikh</h1>
-              <p className="text-slate-600 text-sm -mt-1">Generalist</p>
+              <h1>Wadjih Bencheikh</h1>
+              <p className="text-slate-600 text-sm -mt-1">Généraliste</p>
             </div>
           </div>
           <div className="flex justify-center flex-col">
