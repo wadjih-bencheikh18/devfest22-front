@@ -40,7 +40,7 @@ function Left() {
               <p className="font-light text-lg">52 ans</p>
             </div>
           </div>
-          <BsInfoCircle size={23} className="-mt-8" />
+          <BsInfoCircle size={23} className="-mt-8 mr-20" />
         </div>
         <div>
           <table>
