@@ -183,9 +183,12 @@ function Right() {
           visible ? "mt-3" : "-mt-9 "
         }  `}
       >
-        <div className="col-start-1 cursor-pointer bg-[#5E5B70] py-1 text-white rounded-full transition-all duration-500 ease-in-out hover:scale-105">
+        <Link
+          to="/desc"
+          className="col-start-1 cursor-pointer bg-[#5E5B70] py-1 text-white rounded-full transition-all duration-500 ease-in-out hover:scale-105"
+        >
           Description
-        </div>
+        </Link>
         <div className="col-start-2 cursor-pointer bg-[#5E5B70] py-1 text-white transition-all duration-500 ease-in-out rounded-full hover:scale-105   ">
           Formulaire
         </div>
