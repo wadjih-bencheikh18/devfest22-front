@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "../sections";
 import { Link } from "react-router-dom";
+import loadingGif from "../assets/loading.gif";
 const OUT = {
   "Antécédents médicaux": ["Sans antécédent cardiaque"],
   Symptômes: [
@@ -17,7 +18,13 @@ const OUT = {
 };
 export function Description() {
   const [value, setValue] = useState("");
+  const [loading, setLoading] = useState(false);
   const [fill, setFill] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [loading]);
   return (
     <div className="w-screen min-h-screen font-poppins bg-[#ECE0E5]">
       <Navbar />
@@ -40,17 +47,27 @@ export function Description() {
               }}
               className="inline-block mx-5 px-10 py-2 mt-5 rounded-lg text-lg  mr-2 text-white bg-[#5E5B70]"
             >
-              Reset
+              Réinitialiser
             </button>
             <button
-              onClick={() => value.length > 50 && setFill(true)}
+              onClick={() => {
+                if (value.length > 50) {
+                  setFill(true);
+                  setLoading(true);
+                }
+              }}
               className="inline-block mx-5 px-10 py-2 mt-5 rounded-lg text-lg  mr-24 text-white bg-[#5E5B70]"
             >
-              Fill
+              Générer
             </button>
           </div>
         </div>
-        {fill && (
+        {fill && loading && (
+          <div className="flex justify-center items-center">
+            <img src={loadingGif} className="w-44 h-44" />
+          </div>
+        )}
+        {fill && !loading && (
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl my-5 font-bold text-center">Resultat</h1>
             <table>
@@ -73,7 +90,7 @@ export function Description() {
               to="/"
               className="self-center inline-block mx-5 px-10 py-2 my-5 rounded-lg text-lg  text-white bg-[#5E5B70]"
             >
-              Submit
+              Sauvegarder
             </Link>
           </div>
         )}

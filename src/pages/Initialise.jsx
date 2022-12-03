@@ -1,5 +1,6 @@
 import { DropZoneContainer } from "analysis-ui-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import loadingGif from "../assets/loading.gif";
 import { Navbar } from "../sections";
 import { Link } from "react-router-dom";
 import brain from "../assets/brainscan.png";
@@ -10,14 +11,22 @@ import analyse from "../assets/analyse.png";
 import doc from "../assets/doc.jpg";
 export function Initialise() {
   const [files, setFiles] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [state, setState] = useState(0);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, [loading]);
   return (
     <div className="w-screen min-h-screen font-poppins bg-[#ECE0E5]">
       <Navbar state={1} />
+
       {state === 0 ? (
         <DropZoneContainer
           onDrop={(files) => {
             setFiles(files);
+            setLoading(true);
           }}
         >
           <div className=" ml-20 grid grid-cols-12 ">
@@ -38,16 +47,23 @@ export function Initialise() {
               </h1>
               {files.length > 0 && (
                 <button
-                  onClick={() => setState(1)}
+                  onClick={() => {
+                    setState(1);
+                  }}
                   className="mt-24  bg-blue text-white py-2 px-5 rounded-lg text-md"
                 >
                   Sauvegarder
                 </button>
               )}
             </div>
+
             {files.length === 0 ? (
               <div className=" col-span-6 col-start-7  w-full flex justify-center items-center h-[610px] top-0 border-black border-dashed border-2 ">
                 Déposer vos archives ici
+              </div>
+            ) : loading ? (
+              <div className="col-span-6 col-start-7 flex justify-center h-[600px] items-center">
+                <img src={loadingGif} className="w-44 h-44" />
               </div>
             ) : (
               <GridFiles state={files.length !== 0} />
