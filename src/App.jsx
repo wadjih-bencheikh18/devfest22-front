@@ -1,6 +1,7 @@
 import { Profile, Home, Description, Initialise, LandingPage } from "./pages";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ProfileB } from "./pages/ProfileB";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "load",
     element: <LandingPage />,
+  },
+  {
+    path: "profileB",
+    element: <ProfileB />,
   },
 ]);
 function App() {

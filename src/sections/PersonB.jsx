@@ -9,7 +9,7 @@ import poumon from "../assets/poumon.jpg";
 import wajih from "../assets/wajih.jpg";
 import moon from "../assets/Mounia.jpg";
 import nazim from "../assets/bendib.png";
-import mas from "../assets/mas.jpg";
+import sofia from "../assets/sofia.jpg";
 import dents from "../assets/dents.jpg";
 import { useState } from "react";
 
@@ -36,7 +36,7 @@ const cards = [
     job: "Radiologue",
   },
 ];
-export function Person() {
+export function PersonB() {
   return (
     <div className="w-screen">
       <div className="grid grid-cols-12 ml-40 pt-16">
@@ -49,25 +49,18 @@ export function Person() {
 function Left() {
   return (
     <div className="col-span-5">
-      <Link
-        to="/"
-        className="flex justify-center items-center pr-2 border rounded-3xl py-2 align-middle gap-3 w-32 border-blue cursor-pointer hover:bg-blue hover:text-clear"
-      >
-        <TbArrowBackUp size={25} />
-        <h1 className="">Retour</h1>
-      </Link>
       <div className="flex flex-col mt-24">
         <div className="flex justify-between items-center mb-[40px]">
           <div className="flex gap-x-16 w-[90%] items-center">
             <img
-              src={mas}
+              src={sofia}
               alt="pdp"
               className="rounded-[60px] w-[100px] h-[100px] "
             />
             <div className="gap-x-20 flex items-center">
               <div>
-                <h1 className="text-2xl font-medium">Massaoud Bouzid</h1>
-                <p className="font-light">52 ans</p>
+                <h1 className="text-2xl font-medium">Sofia Boumarsol</h1>
+                <p className="font-light">32 ans</p>
               </div>
               <BsInfoCircle size={23} className="-mt-6" />
             </div>
@@ -76,19 +69,11 @@ function Left() {
         <div>
           <table>
             <tr>
-              <td width={150}>
-                <h1 className="font-medium">Dernière visite :</h1>
-              </td>
-              <td>
-                <p className="ml-3 font-light">03-12-2022</p>
-              </td>
-            </tr>
-            <tr>
               <td>
                 <h1 className="font-medium">Maladies :</h1>
               </td>
               <td>
-                <p className="ml-3 font-light">Diabète, Hyper-tension</p>
+                <p className="ml-3 font-light">Aucune</p>
               </td>
             </tr>
             <tr>
@@ -96,7 +81,7 @@ function Left() {
                 <h1 className="font-medium">Allergies :</h1>
               </td>
               <td>
-                <p className="ml-3 font-light">Champignons, Pollen</p>
+                <p className="ml-3 font-light">Aucune</p>
               </td>
             </tr>
           </table>
@@ -164,29 +149,6 @@ function Right() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div
-        onClick={() => {
-          setVisible((v) => !v);
-        }}
-        className="mt-1 relative z-10 cursor-pointer py-3 px-2 bg-blue rounded-full flex justify-center text-clear"
-      >
-        <HiPlus size={20} />
-      </div>
-      <div
-        className={`grid grid-cols-2 gap-2 transition-all duration-500 ease-in-out text-center ${
-          visible ? "mt-3" : "-mt-10"
-        }  `}
-      >
-        <Link
-          to="/desc"
-          className="col-start-1 cursor-pointer bg-blue py-2 text-clear rounded-full transition-all duration-500 ease-in-out hover:scale-105"
-        >
-          Description
-        </Link>
-        <div className="col-start-2 cursor-pointer bg-blue py-2 text-clear transition-all duration-500 ease-in-out rounded-full hover:scale-105   ">
-          Formulaire
-        </div>
-      </div>
     </div>
   );
 }

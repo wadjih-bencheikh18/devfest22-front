@@ -166,7 +166,7 @@ function FormInit() {
         ))}
       </table>
       <Link
-        to="/"
+        to="/profileB"
         className="self-center inline-block mx-5 px-10 py-2 my-5 rounded-lg text-lg  text-white bg-[#5E5B70]"
       >
         Submit
