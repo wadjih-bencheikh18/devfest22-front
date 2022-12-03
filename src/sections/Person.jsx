@@ -73,7 +73,6 @@ function Left() {
             </div>
           </div>
         </div>
-        (
         <div>
           <table>
             <tr>
@@ -102,7 +101,6 @@ function Left() {
             </tr>
           </table>
         </div>
-        )
       </div>
     </div>
   );
@@ -128,12 +126,12 @@ function Right() {
           <h1 className="">Docs</h1>
         </div>
       </div>
-      <div className="inline-block mt-5 rounded-3xl w-64 pl-5 py-2 gap-3 bg-clear">
+      <div className="inline-block mt-2 rounded-3xl w-64 pl-5 py-2 gap-3 bg-clear">
         <input placeholder="Filtrer" className="font-light"></input>
       </div>
       <Swiper
         modules={[Pagination]}
-        className="mt-5 h-[325px]"
+        className="mt-2 h-[325px]"
         spaceBetween={30}
         slidesPerView={2}
         pagination={{ clickable: true }}
@@ -170,7 +168,7 @@ function Right() {
         onClick={() => {
           setVisible((v) => !v);
         }}
-        className="mt-5 relative z-10 cursor-pointer py-3 px-2 bg-blue rounded-full flex justify-center text-clear"
+        className="mt-1 relative z-10 cursor-pointer py-3 px-2 bg-blue rounded-full flex justify-center text-clear"
       >
         <HiPlus size={20} />
       </div>
@@ -179,9 +177,12 @@ function Right() {
           visible ? "mt-3" : "-mt-10"
         }  `}
       >
-        <div className="col-start-1 cursor-pointer bg-blue py-2 text-clear rounded-full transition-all duration-500 ease-in-out hover:scale-105">
+        <Link
+          to="/desc"
+          className="col-start-1 cursor-pointer bg-blue py-2 text-clear rounded-full transition-all duration-500 ease-in-out hover:scale-105"
+        >
           Description
-        </div>
+        </Link>
         <div className="col-start-2 cursor-pointer bg-blue py-2 text-clear transition-all duration-500 ease-in-out rounded-full hover:scale-105   ">
           Formulaire
         </div>

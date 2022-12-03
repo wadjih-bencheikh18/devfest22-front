@@ -1,4 +1,4 @@
-import { Profile, Home, Description, Initialise } from "./pages";
+import { Profile, Home, Description, Initialise, LandingPage } from "./pages";
 import { Navbar } from "./sections";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "init",
     element: <Initialise />,
+  },
+  {
+    path: "load",
+    element: <LandingPage />,
   },
 ]);
 function App() {

@@ -15,7 +15,6 @@ const persons = [
     time: "30min",
   },
   { name: "Mounia Kias", pic: moon, time: "2h" },
-  { name: "Sofia Moussous", pic: sofia, time: "3h" },
   { name: "Aymen Bendakir", pic: aymen, time: "3h" },
   { name: "Nazim Bendib", pic: nazim, time: "2j" },
 ];
@@ -23,7 +22,7 @@ export function Patients() {
   return (
     <div className="grid grid-cols-2">
       <div className="mt-8 ml-60">
-        <h1 className="text-3xl mb-14">Patients</h1>
+        <h1 className="text-4xl mb-14">Patients</h1>
         <div className="flex gap-4 justify-between">
           <input
             className="rounded-2xl w-full py-2 px-5"
@@ -53,7 +52,7 @@ export function Patients() {
         </div>
       </div>
       <div className="col-start-2">
-        <img src={bg} className=" w-[500px] mt-20 ml-20" />
+        <img src={bg} className="h-[616px] -ml-[150px]" />
       </div>
     </div>
   );

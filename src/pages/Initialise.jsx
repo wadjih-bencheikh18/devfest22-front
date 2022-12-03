@@ -1,7 +1,9 @@
 import { DropZoneContainer } from "analysis-ui-components";
 import { useState } from "react";
 import brain from "../assets/brainscan.png";
-import pdp from "../assets/pdp.jpg";
+import dents from "../assets/dents.jpg";
+import poumon from "../assets/poumon.jpg";
+import pdp from "../assets/sofia.jpg";
 import analyse from "../assets/analyse.png";
 import doc from "../assets/doc.jpg";
 export function Initialise() {
@@ -21,8 +23,8 @@ export function Initialise() {
               className="rounded-[60px] w-[120px] h-[120px] "
             />
             <div>
-              <h1 className="text-3xl">Kwider bencheikh</h1>
-              <p className="font-light text-lg">52 ans</p>
+              <h1 className="text-3xl">Sofia Boumarsol</h1>
+              <p className="font-light text-lg">32 ans</p>
             </div>
           </div>
           <h1 className="mt-24 text-2xl ">
@@ -45,7 +47,27 @@ function GridFiles({ state }) {
     <div className="col-span-6 col-start-7 grid grid-cols-12 h-[600px]">
       <div className="col-span-4  mt-[40%] h-[60%]">
         <h1 className="mt-16 mb-9">Scanner</h1>
-        <Folder img={brain} state={state} />
+        <div className="relative w-full h-[500px]">
+          <img
+            src={brain}
+            alt="brain"
+            className={`w-[50%] transition-all duration-500 ease-in-out absolute ${
+              state ? "top-[10%] left-[20%]" : "top-[15%] left-[25%]"
+            } `}
+          />
+          <img
+            src={dents}
+            alt="brain"
+            className="w-[50%] absolute top-[15%] left-[25%]"
+          />
+          <img
+            src={poumon}
+            alt="brain"
+            className={`w-[50%] transition-all duration-1000 ease-in-out absolute ${
+              state ? "top-[20%] left-[30%]" : "top-[15%] left-[25%]"
+            } `}
+          />
+        </div>
       </div>
       <div className="col-span-4 col-start-5  mt-[40%] h-[60%]">
         <h1 className="mt-16">Analyses</h1>
