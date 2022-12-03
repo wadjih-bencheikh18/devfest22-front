@@ -22,9 +22,9 @@ export function LandingPage() {
           </div>
           <Link
             to="/init"
-            className="ml-[470px]  bg-blue text-white py-2 px-10 rounded-xl text-xl"
+            className="ml-[400px]  bg-blue text-white py-2 px-10 rounded-xl text-lg"
           >
-            Login
+            Se connecter
           </Link>
         </div>
       </div>
