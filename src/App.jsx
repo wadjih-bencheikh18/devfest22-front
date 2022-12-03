@@ -1,5 +1,5 @@
 import { Profile, Home, Description, Initialise, LandingPage } from "./pages";
-import { Navbar } from "./sections";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
@@ -24,11 +24,6 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return (
-    <div className="w-screen min-h-screen font-poppins bg-[#ECE0E5]">
-      <Navbar />
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 export default App;

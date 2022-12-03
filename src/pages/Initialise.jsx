@@ -1,5 +1,7 @@
 import { DropZoneContainer } from "analysis-ui-components";
 import { useState } from "react";
+import { Navbar } from "../sections";
+import { Link } from "react-router-dom";
 import brain from "../assets/brainscan.png";
 import dents from "../assets/dents.jpg";
 import poumon from "../assets/poumon.jpg";
@@ -8,38 +10,54 @@ import analyse from "../assets/analyse.png";
 import doc from "../assets/doc.jpg";
 export function Initialise() {
   const [files, setFiles] = useState([]);
+  const [state, setState] = useState(0);
   return (
-    <DropZoneContainer
-      onDrop={(files) => {
-        setFiles(files);
-      }}
-    >
-      <div className=" ml-20 grid grid-cols-12 ">
-        <div className="col-span-5">
-          <div className="flex  items-center gap-8 mt-[130px] ml-20">
-            <img
-              src={pdp}
-              alt="pdp"
-              className="rounded-[60px] w-[120px] h-[120px] "
-            />
-            <div>
-              <h1 className="text-3xl">Sofia Boumarsol</h1>
-              <p className="font-light text-lg">32 ans</p>
+    <div className="w-screen min-h-screen font-poppins bg-[#ECE0E5]">
+      <Navbar state={1} />
+      {state === 0 ? (
+        <DropZoneContainer
+          onDrop={(files) => {
+            setFiles(files);
+          }}
+        >
+          <div className=" ml-20 grid grid-cols-12 ">
+            <div className="col-span-5">
+              <div className="flex  items-center gap-8 mt-[130px] ml-20">
+                <img
+                  src={pdp}
+                  alt="pdp"
+                  className="rounded-[60px] w-[120px] h-[120px] "
+                />
+                <div>
+                  <h1 className="text-3xl">Sofia Boumarsol</h1>
+                  <p className="font-light text-lg">32 ans</p>
+                </div>
+              </div>
+              <h1 className="mt-24 text-2xl ">
+                Télécharger les anciennes archives médicales
+              </h1>
+              {files.length > 0 && (
+                <button
+                  onClick={() => setState(1)}
+                  className="mt-24  bg-blue text-white py-2 px-5 rounded-lg text-md"
+                >
+                  Sauvegarder
+                </button>
+              )}
             </div>
+            {files.length === 0 ? (
+              <div className=" col-span-6 col-start-7  w-full flex justify-center items-center h-[610px] top-0 border-black border-dashed border-2 ">
+                Déposer vos archives ici
+              </div>
+            ) : (
+              <GridFiles state={files.length !== 0} />
+            )}
           </div>
-          <h1 className="mt-24 text-2xl ">
-            Télécharger les anciennes archives médicales
-          </h1>
-        </div>
-        {files.length === 0 ? (
-          <div className=" col-span-6 col-start-7  w-full flex justify-center items-center h-[610px] top-0 border-black border-dashed border-2 ">
-            Déposer vos archives ici
-          </div>
-        ) : (
-          <GridFiles state={files.length !== 0} />
-        )}
-      </div>
-    </DropZoneContainer>
+        </DropZoneContainer>
+      ) : (
+        <FormInit />
+      )}
+    </div>
   );
 }
 function GridFiles({ state }) {
@@ -103,6 +121,40 @@ function Folder({ img, state }) {
           state ? "top-[20%] left-[30%]" : "top-[15%] left-[25%]"
         } `}
       />
+    </div>
+  );
+}
+const OUT = [
+  "Adresse",
+  "Email",
+  "Telephone",
+  "Code postal",
+  "Maladies chroniques",
+  "Allergies",
+];
+function FormInit() {
+  return (
+    <div className="flex flex-col   justify-center">
+      <h1 className="text-3xl my-5 font-bold text-center">Formulaire</h1>
+      <table className=" self-center">
+        {OUT.map((key) => (
+          <tr>
+            <td className="w-2/12">{key}</td>
+            <td className="w-10/12">
+              <input
+                type="text"
+                className="px-10 py-3 my-1 ml-10 rounded-lg border-2 w-full border-gray-300"
+              />
+            </td>
+          </tr>
+        ))}
+      </table>
+      <Link
+        to="/"
+        className="self-center inline-block mx-5 px-10 py-2 my-5 rounded-lg text-lg  text-white bg-[#5E5B70]"
+      >
+        Submit
+      </Link>
     </div>
   );
 }
