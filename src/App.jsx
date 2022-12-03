@@ -1,4 +1,4 @@
-import { Profile, Home, Description } from "./pages";
+import { Profile, Home, Description, Initialise } from "./pages";
 import { Navbar } from "./sections";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "desc",
     element: <Description />,
+  },
+  {
+    path: "init",
+    element: <Initialise />,
   },
 ]);
 function App() {

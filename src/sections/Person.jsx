@@ -42,6 +42,7 @@ function Left() {
           </div>
           <BsInfoCircle size={23} className="-mt-8 mr-20" />
         </div>
+        (
         <div>
           <table>
             <tr>
@@ -70,6 +71,7 @@ function Left() {
             </tr>
           </table>
         </div>
+        )
       </div>
     </div>
   );
