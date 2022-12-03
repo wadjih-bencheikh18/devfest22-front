@@ -1,7 +1,6 @@
-import { Profile, Home } from "./pages";
+import { Profile, Home, Description } from "./pages";
 import { Navbar } from "./sections";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Description } from "./pages/Description";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className="w-screen h-screen font-poppins bg-[#ECE0E5]">
+    <div className="w-screen min-h-screen font-poppins bg-[#ECE0E5]">
       <Navbar />
       <RouterProvider router={router} />
     </div>
