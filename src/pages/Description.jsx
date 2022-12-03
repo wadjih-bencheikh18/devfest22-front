@@ -31,13 +31,16 @@ export function Description() {
         />
         <div className="flex self-end ">
           <button
-            onClick={() => setValue("")}
+            onClick={() => {
+              setValue("");
+              setFill(false);
+            }}
             className="inline-block mx-5 px-10 py-2 mt-5 rounded-lg text-lg  mr-2 text-white bg-[#5E5B70]"
           >
             Reset
           </button>
           <button
-            onClick={() => setFill(true)}
+            onClick={() => value.length > 50 && setFill(true)}
             className="inline-block mx-5 px-10 py-2 mt-5 rounded-lg text-lg  mr-24 text-white bg-[#5E5B70]"
           >
             Fill
@@ -53,7 +56,9 @@ export function Description() {
                 <td className="w-2/12">{key}</td>
                 <td className="w-10/12">
                   <input
-                    value={Array.isArray(value) ? value.join(", ") : value}
+                    defaultValue={
+                      Array.isArray(value) ? value.join(", ") : value
+                    }
                     type="text"
                     className="px-10 py-5 rounded-lg border-2 w-full border-gray-300"
                   />
